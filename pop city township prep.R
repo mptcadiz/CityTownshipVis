@@ -891,7 +891,7 @@ anti1900_2010_2016reverse <- anti_join(pop.countysub.1900_2000,subtotal_2010_201
 
 #for merging subtotal_2010_2016 (2010+2016) and 1900_200 on Id2short
 total <- full_join(subtotal_2010_2016,pop.countysub.1900_2000,by = c("Id2short","placeName")) %>%
-  select(-Id2short,-"Id2.16",-ch9000pct, -beale93R, -beale03, -rec_code, -"Id.16", -"Id2.10",-"Margin of Error; Total") %>%
+  #select(-Id2short,-"Id2.16",-ch9000pct, -beale93R, -beale03, -rec_code, -"Id.16", -"Id2.10",-"Margin of Error; Total") %>%
   rename(Id = Id.10) %>%
   select(Id, placeName, area, countyName, countyFIPS, pop1900, pop1910, pop1920, pop1930, pop1940, pop1950, pop1960, pop1970, pop1980, pop1990, pop2000, pop2010, pop2016) %>%
   mutate(
